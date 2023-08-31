@@ -7,15 +7,15 @@ plugins {
 }
 
 android {
-    namespace 'com.example.newsapp'
+    namespace 'com.markdawes.newsapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.newsapp"
+        applicationId "com.markdawes.newsapp"
         minSdk 26
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -27,6 +27,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -86,4 +88,5 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
 }
